@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Compare Products | BuyKaroYaNahi</title>
+<title>BuyKaroYaNahi</title>
 
 <style>
-
-*{
-    box-sizing:border-box;
-}
-
 body{
     margin:0;
     font-family:Arial,sans-serif;
@@ -26,25 +20,19 @@ a{
 }
 
 .wrap{
+    max-width:1180px;
     width:92%;
-    max-width:1150px;
     margin:auto;
 }
 
 /* NAVBAR */
-
 .nav{
     height:72px;
     background:#fff;
     border-bottom:1px solid #e7ebf2;
     display:flex;
     align-items:center;
-}
-
-.nav-inner{
-    display:flex;
     justify-content:space-between;
-    align-items:center;
 }
 
 .logo{
@@ -56,24 +44,29 @@ a{
     color:#2457e6;
 }
 
-.back{
-    color:#2457e6;
-    font-weight:800;
+.links{
+    display:flex;
+    gap:24px;
     font-size:14px;
+    font-weight:700;
+    color:#566176;
 }
 
+.links a:hover{
+    color:#2457e6;
+}
 
 /* HERO */
-
 .hero{
     text-align:center;
-    padding:55px 0;
+    padding:75px 0;
     background:linear-gradient(135deg,#eef4ff,#fff);
 }
 
 .hero h1{
-    font-size:48px;
-    margin:12px 0;
+    font-size:54px;
+    line-height:1.05;
+    margin:15px 0;
 }
 
 .hero h1 span{
@@ -82,744 +75,549 @@ a{
 
 .hero p{
     color:#687386;
+    font-size:17px;
 }
 
-
-/* SELECT AREA */
-
-.select-area{
+/* SEARCH */
+.search{
+    margin:25px auto;
+    max-width:700px;
+    display:flex;
     background:#fff;
-    border:1px solid #e7ebf2;
-    border-radius:20px;
-    padding:25px;
-    margin:35px 0 20px;
-}
-
-.select-area h2{
-    margin-top:0;
-}
-
-.select-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.select-box label{
-    display:block;
-    font-size:12px;
-    font-weight:800;
-    color:#687386;
-    margin-bottom:7px;
-}
-
-select{
-    width:100%;
-    padding:13px;
+    padding:7px;
     border:1px solid #dce3ee;
-    border-radius:10px;
-    background:white;
-    font-size:15px;
-    outline:none;
+    border-radius:15px;
 }
 
-.compare-btn{
-    width:100%;
-    margin-top:15px;
-    padding:14px;
+.search input{
+    flex:1;
     border:0;
-    border-radius:10px;
-    background:#2457e6;
-    color:white;
+    outline:0;
+    padding:14px;
     font-size:15px;
-    font-weight:900;
+}
+
+.search button{
+    border:0;
+    background:#2457e6;
+    color:#fff;
+    border-radius:10px;
+    padding:0 22px;
+    font-weight:800;
     cursor:pointer;
 }
 
-.compare-btn:hover{
+.search button:hover{
     background:#1945c2;
 }
 
+/* SECTIONS */
+section{
+    padding:55px 0;
+}
 
-/* RESULT */
+section h2{
+    margin-bottom:8px;
+}
 
-.result{
-    display:none;
+.muted{
+    color:#687386;
+    font-size:13px;
+}
+
+/* CATEGORY GRID */
+.cats{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:14px;
+}
+
+.cat{
     background:#fff;
     border:1px solid #e7ebf2;
-    border-radius:20px;
-    margin:20px 0 40px;
-    overflow:hidden;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th,
-td{
-    padding:18px;
-    border-bottom:1px solid #edf0f5;
+    border-radius:16px;
+    padding:22px;
     text-align:center;
-}
-
-th{
-    background:#fafbfe;
-}
-
-.feature{
-    text-align:left;
     font-weight:800;
+    transition:0.2s;
 }
 
-.product-name{
-    font-size:18px;
-    font-weight:900;
+.cat:hover{
+    box-shadow:0 12px 30px #dfe5f2;
+    transform:translateY(-3px);
+    color:#2457e6;
+}
+
+.icon{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e7ebf2;
+    border-radius:18px;
+    padding:22px;
+}
+
+.card h3{
+    margin:0 0 5px;
 }
 
 .price{
-    font-size:21px;
+    font-size:22px;
     font-weight:900;
-    margin:7px 0;
+    margin:17px 0;
 }
 
+/* TAGS */
 .buy{
-    display:inline-block;
-    background:#e8f8f1;
     color:#0a8b55;
-    padding:6px 9px;
-    border-radius:8px;
-    font-size:11px;
-    font-weight:900;
+    background:#e8f8f1;
 }
 
 .wait{
-    display:inline-block;
-    background:#fff5dd;
     color:#a96d00;
-    padding:6px 9px;
-    border-radius:8px;
-    font-size:11px;
-    font-weight:900;
+    background:#fff5dd;
 }
 
 .avoid{
-    display:inline-block;
-    background:#ffebeb;
     color:#bd3535;
+    background:#ffebeb;
+}
+
+.tag{
+    display:inline-block;
     padding:6px 9px;
     border-radius:8px;
     font-size:11px;
     font-weight:900;
 }
 
+/* SCORE */
 .score{
-    color:#2457e6;
-    font-size:18px;
-    font-weight:900;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
 }
 
 .bar{
-    height:7px;
+    height:8px;
     background:#edf0f5;
     border-radius:20px;
     margin-top:7px;
+    overflow:hidden;
 }
 
 .bar i{
     display:block;
     height:100%;
     background:#18a66a;
-    border-radius:20px;
 }
-
-
-/* EMPTY */
-
-.empty{
-    text-align:center;
-    padding:30px;
-    color:#687386;
-}
-
 
 /* MOBILE */
+@media(max-width:800px){
 
-@media(max-width:700px){
+    .links{
+        display:none;
+    }
+
+    .cats{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+    }
 
     .hero h1{
-        font-size:36px;
+        font-size:42px;
     }
-
-    .select-grid{
-        grid-template-columns:1fr;
-    }
-
-    .result{
-        overflow-x:auto;
-    }
-
-    table{
-        min-width:750px;
-    }
-
 }
 
-</style>
+@media(max-width:550px){
 
+    .cats,
+    .products{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .search{
+        flex-direction:column;
+        gap:8px;
+        background:transparent;
+        border:0;
+    }
+
+    .search input,
+    .search button{
+        height:48px;
+        border-radius:10px;
+    }
+
+    .search input{
+        background:#fff;
+        border:1px solid #e7ebf2;
+    }
+
+    .search button{
+        background:#2457e6;
+        color:#fff;
+        border:0;
+    }
+}
+</style>
 </head>
 
 <body>
 
-
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
 <div class="nav">
 
-<div class="wrap nav-inner">
+    <div class="wrap"
+         style="display:flex;justify-content:space-between;align-items:center">
 
-<a class="logo" href="index.html">
-Buy<span>Karo</span>YaNahi
-</a>
+        <a class="logo" href="index.html">
+            Buy<span>Karo</span>YaNahi
+        </a>
 
-<a class="back" href="index.html">
-← Home
-</a>
+        <div class="links">
+
+            <a href="#categories">
+                Categories
+            </a>
+
+            <a href="#checks">
+                Latest Checks
+            </a>
+
+            <a href="#compare">
+                Compare
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
 
-</div>
 
-
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <div class="hero">
 
-<div class="wrap">
+    <div class="wrap">
 
-<div>
-⚖️ PRODUCT COMPARISON
-</div>
+        <div>
+            ✓ SMART BUYING DECISIONS
+        </div>
 
-<h1>
-Compare before you
-<span>buy.</span>
-</h1>
+        <h1>
+            Kharidne se pehle,<br>
+            <span>check kar lo.</span>
+        </h1>
 
-<p>
-Do products select karo aur dekho kaunsa better hai.
-</p>
-
-</div>
-
-</div>
+        <p>
+            Product search karo aur dekho — BUY, WAIT ya AVOID?
+        </p>
 
 
-<div class="wrap">
+        <div class="search">
 
+            <input
+                type="text"
+                placeholder="Search a product e.g. iPhone 17, HP Laptop..."
+            >
 
-<!-- SELECT PRODUCTS -->
+            <button>
+                CHECK NOW
+            </button>
 
-<div class="select-area">
+        </div>
 
-<h2>
-Select Products
-</h2>
-
-<div class="select-grid">
-
-
-<div class="select-box">
-
-<label>
-PRODUCT 1
-</label>
-
-<select id="product1">
-
-<option value="">
-Select Product
-</option>
-
-</select>
+    </div>
 
 </div>
 
 
-<div class="select-box">
+<!-- ================= CATEGORIES ================= -->
 
-<label>
-PRODUCT 2
-</label>
+<section id="categories">
 
-<select id="product2">
+    <div class="wrap">
 
-<option value="">
-Select Product
-</option>
+        <h2>
+            Explore Categories
+        </h2>
 
-</select>
+        <p class="muted">
+            Category par click karte hi usi category ka dedicated page khulega.
+        </p>
 
-</div>
+        <br>
 
 
-</div>
+        <div class="cats">
 
 
-<button
-class="compare-btn"
-onclick="compareProducts()">
+            <!-- MOBILE -->
 
-COMPARE NOW
+            <a class="cat" href="mobiles.html">
 
-</button>
+                <div class="icon">
+                    📱
+                </div>
 
-</div>
+                Mobiles
 
+            </a>
 
-<!-- RESULT -->
 
-<div class="result" id="result">
+            <!-- LAPTOP -->
 
-<table>
+            <a class="cat" href="laptops.html">
 
-<thead>
+                <div class="icon">
+                    💻
+                </div>
 
-<tr>
+                Laptops
 
-<th class="feature">
-Feature
-</th>
+            </a>
 
-<th id="name1">
-Product 1
-</th>
 
-<th id="name2">
-Product 2
-</th>
+            <!-- TV -->
 
-</tr>
+            <a class="cat" href="tvs.html">
 
-</thead>
+                <div class="icon">
+                    📺
+                </div>
 
+                TVs
 
-<tbody>
+            </a>
 
 
-<tr>
+            <!-- AC -->
 
-<td class="feature">
-Price
-</td>
+            <a class="cat" href="ac.html">
 
-<td id="price1"></td>
+                <div class="icon">
+                    ❄️
+                </div>
 
-<td id="price2"></td>
+                AC
 
-</tr>
+            </a>
 
 
-<tr>
+            <!-- APPLIANCES -->
 
-<td class="feature">
-Verdict
-</td>
+            <a class="cat" href="appliances.html">
 
-<td id="verdict1"></td>
+                <div class="icon">
+                    🧺
+                </div>
 
-<td id="verdict2"></td>
+                Appliances
 
-</tr>
+            </a>
 
 
-<tr>
+            <!-- AUDIO -->
 
-<td class="feature">
-Worth It Score
-</td>
+            <a class="cat" href="audio.html">
 
-<td>
+                <div class="icon">
+                    🎧
+                </div>
 
-<div class="score" id="score1"></div>
+                Audio
 
-<div class="bar">
-<i id="bar1"></i>
-</div>
+            </a>
 
-</td>
 
-<td>
+        </div>
 
-<div class="score" id="score2"></div>
+    </div>
 
-<div class="bar">
-<i id="bar2"></i>
-</div>
+</section>
 
-</td>
 
-</tr>
+<!-- ================= LATEST CHECKS ================= -->
 
+<section id="checks">
 
-<tr>
+    <div class="wrap">
 
-<td class="feature">
-Performance
-</td>
+        <h2>
+            Latest Checks
+        </h2>
 
-<td id="performance1"></td>
 
-<td id="performance2"></td>
+        <div class="products">
 
-</tr>
 
+            <!-- PRODUCT 1 -->
 
-<tr>
+            <div class="card">
 
-<td class="feature">
-Camera / Quality
-</td>
+                <span class="tag buy">
+                    🟢 BUY
+                </span>
 
-<td id="camera1"></td>
+                <h3>
+                    Samsung Galaxy S26
+                </h3>
 
-<td id="camera2"></td>
+                <div class="muted">
+                    Samsung • Smartphone
+                </div>
 
-</tr>
+                <div class="price">
+                    ₹74,999
+                </div>
 
+                <div class="score">
 
-<tr>
+                    <span>
+                        Worth It Score
+                    </span>
 
-<td class="feature">
-Battery / Efficiency
-</td>
+                    <b>
+                        88/100
+                    </b>
 
-<td id="battery1"></td>
+                </div>
 
-<td id="battery2"></td>
+                <div class="bar">
+                    <i style="width:88%"></i>
+                </div>
 
-</tr>
+            </div>
 
 
-<tr>
+            <!-- PRODUCT 2 -->
 
-<td class="feature">
-Value
-</td>
+            <div class="card">
 
-<td id="value1"></td>
+                <span class="tag wait">
+                    🟡 WAIT
+                </span>
 
-<td id="value2"></td>
+                <h3>
+                    HP Pavilion 15
+                </h3>
 
-</tr>
+                <div class="muted">
+                    HP • Laptop
+                </div>
 
+                <div class="price">
+                    ₹59,990
+                </div>
 
-</tbody>
+                <div class="score">
 
-</table>
+                    <span>
+                        Worth It Score
+                    </span>
 
-</div>
+                    <b>
+                        67/100
+                    </b>
 
+                </div>
 
-<div class="empty" id="empty">
+                <div class="bar">
+                    <i style="width:67%"></i>
+                </div>
 
-Products select karke
-<b>COMPARE NOW</b> dabao.
+            </div>
 
-</div>
 
+            <!-- PRODUCT 3 -->
 
-</div>
+            <div class="card">
 
+                <span class="tag avoid">
+                    🔴 AVOID
+                </span>
+
+                <h3>
+                    boAt Headphones X
+                </h3>
+
+                <div class="muted">
+                    boAt • Audio
+                </div>
+
+                <div class="price">
+                    ₹2,999
+                </div>
+
+                <div class="score">
+
+                    <span>
+                        Worth It Score
+                    </span>
+
+                    <b>
+                        42/100
+                    </b>
+
+                </div>
+
+                <div class="bar">
+                    <i style="width:42%"></i>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
+document
+.querySelector(".search button")
+.addEventListener("click", function(){
 
-/* PRODUCT DATABASE */
+    const value =
+    document
+    .querySelector(".search input")
+    .value
+    .trim();
 
-const products = {
+    if(value === ""){
 
-samsung:{
+        alert("Please enter a product name.");
 
-name:"Samsung Galaxy S26",
+        return;
 
-price:"₹74,999",
+    }
 
-verdict:"BUY",
+    alert(
+        "Product search system database connect hone ke baad active hoga."
+    );
 
-score:88,
-
-performance:"⭐⭐⭐⭐⭐",
-
-camera:"⭐⭐⭐⭐⭐",
-
-battery:"⭐⭐⭐⭐",
-
-value:"⭐⭐⭐⭐"
-
-},
-
-iphone:{
-
-name:"iPhone 17",
-
-price:"₹79,999",
-
-verdict:"BUY",
-
-score:91,
-
-performance:"⭐⭐⭐⭐⭐",
-
-camera:"⭐⭐⭐⭐⭐",
-
-battery:"⭐⭐⭐⭐",
-
-value:"⭐⭐⭐⭐"
-
-},
-
-hp:{
-
-name:"HP Pavilion 15",
-
-price:"₹59,990",
-
-verdict:"WAIT",
-
-score:67,
-
-performance:"⭐⭐⭐⭐",
-
-camera:"⭐⭐⭐",
-
-battery:"⭐⭐⭐⭐",
-
-value:"⭐⭐⭐"
-
-},
-
-lenovo:{
-
-name:"Lenovo IdeaPad Pro",
-
-price:"₹69,990",
-
-verdict:"BUY",
-
-score:86,
-
-performance:"⭐⭐⭐⭐⭐",
-
-camera:"⭐⭐⭐",
-
-battery:"⭐⭐⭐⭐",
-
-value:"⭐⭐⭐⭐"
-
-},
-
-sony:{
-
-name:"Sony WH Series",
-
-price:"₹24,990",
-
-verdict:"BUY",
-
-score:92,
-
-performance:"⭐⭐⭐⭐⭐",
-
-camera:"⭐⭐⭐⭐⭐",
-
-battery:"⭐⭐⭐⭐⭐",
-
-value:"⭐⭐⭐⭐⭐"
-
-},
-
-airpods:{
-
-name:"AirPods",
-
-price:"₹16,990",
-
-verdict:"BUY",
-
-score:88,
-
-performance:"⭐⭐⭐⭐⭐",
-
-camera:"⭐⭐⭐⭐",
-
-battery:"⭐⭐⭐⭐",
-
-value:"⭐⭐⭐⭐"
-
-}
-
-};
-
-
-/* LOAD PRODUCTS */
-
-const p1=document.getElementById("product1");
-
-const p2=document.getElementById("product2");
-
-
-for(const key in products){
-
-const option1=document.createElement("option");
-
-option1.value=key;
-
-option1.textContent=products[key].name;
-
-p1.appendChild(option1);
-
-
-const option2=document.createElement("option");
-
-option2.value=key;
-
-option2.textContent=products[key].name;
-
-p2.appendChild(option2);
-
-}
-
-
-/* COMPARE */
-
-function compareProducts(){
-
-const key1=p1.value;
-
-const key2=p2.value;
-
-
-if(!key1 || !key2){
-
-alert("Please select both products.");
-
-return;
-
-}
-
-
-if(key1===key2){
-
-alert("Please select two different products.");
-
-return;
-
-}
-
-
-const a=products[key1];
-
-const b=products[key2];
-
-
-document.getElementById("name1").innerHTML=
-a.name;
-
-document.getElementById("name2").innerHTML=
-b.name;
-
-
-document.getElementById("price1").innerHTML=
-a.price;
-
-document.getElementById("price2").innerHTML=
-b.price;
-
-
-document.getElementById("verdict1").innerHTML=
-verdictBadge(a.verdict);
-
-document.getElementById("verdict2").innerHTML=
-verdictBadge(b.verdict);
-
-
-document.getElementById("score1").innerHTML=
-a.score+"/100";
-
-document.getElementById("score2").innerHTML=
-b.score+"/100";
-
-
-document.getElementById("bar1").style.width=
-a.score+"%";
-
-document.getElementById("bar2").style.width=
-b.score+"%";
-
-
-document.getElementById("performance1").innerHTML=
-a.performance;
-
-document.getElementById("performance2").innerHTML=
-b.performance;
-
-
-document.getElementById("camera1").innerHTML=
-a.camera;
-
-document.getElementById("camera2").innerHTML=
-b.camera;
-
-
-document.getElementById("battery1").innerHTML=
-a.battery;
-
-document.getElementById("battery2").innerHTML=
-b.battery;
-
-
-document.getElementById("value1").innerHTML=
-a.value;
-
-document.getElementById("value2").innerHTML=
-b.value;
-
-
-document.getElementById("result").style.display=
-"block";
-
-document.getElementById("empty").style.display=
-"none";
-
-
-document.getElementById("result").scrollIntoView({
-behavior:"smooth"
 });
-
-}
-
-
-/* VERDICT */
-
-function verdictBadge(verdict){
-
-if(verdict==="BUY"){
-
-return '<span class="buy">🟢 BUY</span>';
-
-}
-
-if(verdict==="WAIT"){
-
-return '<span class="wait">🟡 WAIT</span>';
-
-}
-
-return '<span class="avoid">🔴 AVOID</span>';
-
-}
 
 </script>
 
