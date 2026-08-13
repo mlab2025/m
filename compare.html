@@ -1,185 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Compare Products | BuyKaroYaNahi</title>
+<title>Compare | BuyKaroYaNahi</title>
 
 <style>
 
 *{
-    box-sizing:border-box;
+box-sizing:border-box;
 }
 
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f7f9fc;
-    color:#172033;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f7f9fc;
+color:#172033;
 }
 
 a{
-    text-decoration:none;
-    color:inherit;
+text-decoration:none;
+color:inherit;
 }
 
 .wrap{
-    width:92%;
-    max-width:1100px;
-    margin:auto;
+width:92%;
+max-width:1100px;
+margin:auto;
 }
 
-/* NAVBAR */
+
+/* NAV */
 
 .nav{
-    height:72px;
-    background:#fff;
-    border-bottom:1px solid #e7ebf2;
-    display:flex;
-    align-items:center;
+height:72px;
+background:#fff;
+border-bottom:1px solid #e7ebf2;
 }
 
 .nav-inner{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
 .logo{
-    font-size:24px;
-    font-weight:900;
+font-size:24px;
+font-weight:900;
 }
 
 .logo span{
-    color:#2457e6;
+color:#2457e6;
 }
 
-.back{
-    color:#2457e6;
-    font-weight:800;
-    font-size:14px;
+.home{
+color:#2457e6;
+font-weight:800;
 }
+
 
 /* HERO */
 
 .hero{
-    text-align:center;
-    padding:55px 0;
-    background:linear-gradient(135deg,#eef4ff,#fff);
+text-align:center;
+padding:60px 0;
+background:linear-gradient(135deg,#eef4ff,#fff);
 }
 
 .hero h1{
-    font-size:45px;
-    margin:10px 0;
+font-size:48px;
+margin:15px 0;
 }
 
 .hero h1 span{
-    color:#2457e6;
+color:#2457e6;
 }
 
 .hero p{
-    color:#687386;
+color:#687386;
 }
 
-/* COMPARE BOX */
 
-.compare-box{
-    background:#fff;
-    border:1px solid #e7ebf2;
-    border-radius:20px;
-    margin:35px 0;
-    overflow:hidden;
+/* SELECT */
+
+.box{
+background:#fff;
+border:1px solid #e7ebf2;
+border-radius:20px;
+padding:25px;
+margin:35px 0;
 }
 
-/* TABLE */
+.select-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+label{
+display:block;
+font-size:12px;
+font-weight:800;
+margin-bottom:7px;
+color:#687386;
+}
+
+select{
+width:100%;
+padding:14px;
+border:1px solid #dce3ee;
+border-radius:10px;
+font-size:15px;
+background:#fff;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:18px;
+border:0;
+border-radius:10px;
+background:#2457e6;
+color:#fff;
+font-weight:900;
+cursor:pointer;
+}
+
+
+/* RESULT */
+
+#result{
+display:none;
+background:#fff;
+border:1px solid #e7ebf2;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:40px;
+}
 
 table{
-    width:100%;
-    border-collapse:collapse;
+width:100%;
+border-collapse:collapse;
 }
 
-th,
-td{
-    padding:20px;
-    border-bottom:1px solid #edf0f5;
-    text-align:center;
+th,td{
+padding:18px;
+border-bottom:1px solid #edf0f5;
+text-align:center;
 }
 
 th{
-    background:#fafbfe;
+background:#fafbfe;
 }
 
 .feature{
-    text-align:left;
-    font-weight:800;
+text-align:left;
+font-weight:800;
 }
 
-.product-name{
-    font-size:18px;
-    font-weight:900;
+.name{
+font-size:18px;
+font-weight:900;
 }
 
 .price{
-    font-size:22px;
-    font-weight:900;
-    margin-top:8px;
-}
-
-.buy{
-    display:inline-block;
-    background:#e8f8f1;
-    color:#0a8b55;
-    padding:7px 10px;
-    border-radius:8px;
-    font-size:12px;
-    font-weight:900;
+font-size:21px;
+font-weight:900;
+margin:7px;
 }
 
 .score{
-    font-weight:900;
-    color:#2457e6;
+font-size:18px;
+font-weight:900;
+color:#2457e6;
 }
 
-.cta{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    padding:25px;
+.buy{
+color:#0a8b55;
+font-weight:900;
 }
 
-.btn{
-    padding:12px 20px;
-    border-radius:10px;
-    font-weight:800;
+.wait{
+color:#a96d00;
+font-weight:900;
 }
 
-.primary{
-    background:#2457e6;
-    color:white;
+.avoid{
+color:#bd3535;
+font-weight:900;
 }
 
-.secondary{
-    background:#edf2ff;
-    color:#2457e6;
-}
 
 /* MOBILE */
 
 @media(max-width:700px){
 
-    .hero h1{
-        font-size:35px;
-    }
+.hero h1{
+font-size:36px;
+}
 
-    .compare-box{
-        overflow-x:auto;
-    }
+.select-grid{
+grid-template-columns:1fr;
+}
 
-    table{
-        min-width:700px;
-    }
+#result{
+overflow-x:auto;
+}
+
+table{
+min-width:700px;
+}
 
 }
 
@@ -187,24 +221,25 @@ th{
 
 </head>
 
+
 <body>
 
 
-<!-- NAVBAR -->
+<!-- NAV -->
 
 <div class="nav">
 
-    <div class="wrap nav-inner">
+<div class="wrap nav-inner">
 
-        <a class="logo" href="index.html">
-            Buy<span>Karo</span>YaNahi
-        </a>
+<a class="logo" href="index.html">
+Buy<span>Karo</span>YaNahi
+</a>
 
-        <a class="back" href="index.html">
-            ← Home
-        </a>
+<a class="home" href="index.html">
+← Home
+</a>
 
-    </div>
+</div>
 
 </div>
 
@@ -213,31 +248,131 @@ th{
 
 <div class="hero">
 
-    <div class="wrap">
+<div class="wrap">
 
-        <div>
-            ⚖️ PRODUCT COMPARISON
-        </div>
+<div>⚖️ PRODUCT COMPARISON</div>
 
-        <h1>
-            Compare before you
-            <span>buy.</span>
-        </h1>
+<h1>
+Compare before you
+<span>buy.</span>
+</h1>
 
-        <p>
-            Products ko side-by-side compare karo aur better decision lo.
-        </p>
+<p>
+Do products select karo aur dekho kaunsa better hai.
+</p>
 
-    </div>
+</div>
 
 </div>
 
 
-<!-- COMPARISON -->
-
 <div class="wrap">
 
-<div class="compare-box">
+
+<!-- SELECT -->
+
+<div class="box">
+
+<h2>
+Select Products
+</h2>
+
+<div class="select-grid">
+
+<div>
+
+<label>
+PRODUCT 1
+</label>
+
+<select id="p1">
+
+<option value="">
+Select Product
+</option>
+
+<option value="s26">
+Samsung Galaxy S26
+</option>
+
+<option value="iphone17">
+iPhone 17
+</option>
+
+<option value="hp15">
+HP Pavilion 15
+</option>
+
+<option value="lenovo">
+Lenovo IdeaPad Pro
+</option>
+
+<option value="sony">
+Sony WH Series
+</option>
+
+<option value="airpods">
+AirPods
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>
+PRODUCT 2
+</label>
+
+<select id="p2">
+
+<option value="">
+Select Product
+</option>
+
+<option value="s26">
+Samsung Galaxy S26
+</option>
+
+<option value="iphone17">
+iPhone 17
+</option>
+
+<option value="hp15">
+HP Pavilion 15
+</option>
+
+<option value="lenovo">
+Lenovo IdeaPad Pro
+</option>
+
+<option value="sony">
+Sony WH Series
+</option>
+
+<option value="airpods">
+AirPods
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<button onclick="compare()">
+COMPARE NOW
+</button>
+
+</div>
+
+
+<!-- RESULT -->
+
+<div id="result">
 
 <table>
 
@@ -249,36 +384,12 @@ th{
 Feature
 </th>
 
-<th>
-
-<div class="product-name">
-Samsung Galaxy S26
-</div>
-
-<div class="price">
-₹74,999
-</div>
-
-<span class="buy">
-🟢 BUY
-</span>
-
+<th id="name1">
+Product 1
 </th>
 
-<th>
-
-<div class="product-name">
-iPhone 17
-</div>
-
-<div class="price">
-₹79,999
-</div>
-
-<span class="buy">
-🟢 BUY
-</span>
-
+<th id="name2">
+Product 2
 </th>
 
 </tr>
@@ -288,6 +399,18 @@ iPhone 17
 
 <tbody>
 
+<tr>
+
+<td class="feature">
+Price
+</td>
+
+<td id="price1"></td>
+
+<td id="price2"></td>
+
+</tr>
+
 
 <tr>
 
@@ -295,13 +418,22 @@ iPhone 17
 Worth It Score
 </td>
 
-<td class="score">
-88 / 100
+<td id="score1"></td>
+
+<td id="score2"></td>
+
+</tr>
+
+
+<tr>
+
+<td class="feature">
+Verdict
 </td>
 
-<td class="score">
-91 / 100
-</td>
+<td id="verdict1"></td>
+
+<td id="verdict2"></td>
 
 </tr>
 
@@ -312,13 +444,9 @@ Worth It Score
 Performance
 </td>
 
-<td>
-⭐⭐⭐⭐⭐
-</td>
+<td id="performance1"></td>
 
-<td>
-⭐⭐⭐⭐⭐
-</td>
+<td id="performance2"></td>
 
 </tr>
 
@@ -326,16 +454,12 @@ Performance
 <tr>
 
 <td class="feature">
-Camera
+Camera / Quality
 </td>
 
-<td>
-⭐⭐⭐⭐⭐
-</td>
+<td id="camera1"></td>
 
-<td>
-⭐⭐⭐⭐⭐
-</td>
+<td id="camera2"></td>
 
 </tr>
 
@@ -343,33 +467,12 @@ Camera
 <tr>
 
 <td class="feature">
-Battery
+Battery / Efficiency
 </td>
 
-<td>
-⭐⭐⭐⭐
-</td>
+<td id="battery1"></td>
 
-<td>
-⭐⭐⭐⭐
-</td>
-
-</tr>
-
-
-<tr>
-
-<td class="feature">
-Display
-</td>
-
-<td>
-⭐⭐⭐⭐⭐
-</td>
-
-<td>
-⭐⭐⭐⭐⭐
-</td>
+<td id="battery2"></td>
 
 </tr>
 
@@ -380,30 +483,9 @@ Display
 Value
 </td>
 
-<td>
-⭐⭐⭐⭐
-</td>
+<td id="value1"></td>
 
-<td>
-⭐⭐⭐⭐
-</td>
-
-</tr>
-
-
-<tr>
-
-<td class="feature">
-Our Verdict
-</td>
-
-<td>
-🟢 BUY
-</td>
-
-<td>
-🟢 BUY
-</td>
+<td id="value2"></td>
 
 </tr>
 
@@ -412,29 +494,202 @@ Our Verdict
 
 </table>
 
-
-<div class="cta">
-
-<a href="index.html" class="btn secondary">
-← Home
-</a>
-
-<a href="product-detail.html?product=samsung-galaxy-s26"
-class="btn primary">
-Samsung S26 Details
-</a>
-
-<a href="product-detail.html?product=iphone-17"
-class="btn primary">
-iPhone 17 Details
-</a>
-
 </div>
 
 </div>
 
-</div>
+
+<script>
+
+
+const data={
+
+
+s26:{
+name:"Samsung Galaxy S26",
+price:"₹74,999",
+score:88,
+verdict:"BUY",
+performance:"⭐⭐⭐⭐⭐",
+camera:"⭐⭐⭐⭐⭐",
+battery:"⭐⭐⭐⭐",
+value:"⭐⭐⭐⭐"
+},
+
+
+iphone17:{
+name:"iPhone 17",
+price:"₹79,999",
+score:91,
+verdict:"BUY",
+performance:"⭐⭐⭐⭐⭐",
+camera:"⭐⭐⭐⭐⭐",
+battery:"⭐⭐⭐⭐",
+value:"⭐⭐⭐⭐"
+},
+
+
+hp15:{
+name:"HP Pavilion 15",
+price:"₹59,990",
+score:67,
+verdict:"WAIT",
+performance:"⭐⭐⭐⭐",
+camera:"⭐⭐⭐",
+battery:"⭐⭐⭐⭐",
+value:"⭐⭐⭐"
+},
+
+
+lenovo:{
+name:"Lenovo IdeaPad Pro",
+price:"₹69,990",
+score:86,
+verdict:"BUY",
+performance:"⭐⭐⭐⭐⭐",
+camera:"⭐⭐⭐",
+battery:"⭐⭐⭐⭐",
+value:"⭐⭐⭐⭐"
+},
+
+
+sony:{
+name:"Sony WH Series",
+price:"₹24,990",
+score:92,
+verdict:"BUY",
+performance:"⭐⭐⭐⭐⭐",
+camera:"⭐⭐⭐⭐⭐",
+battery:"⭐⭐⭐⭐⭐",
+value:"⭐⭐⭐⭐⭐"
+},
+
+
+airpods:{
+name:"AirPods",
+price:"₹16,990",
+score:88,
+verdict:"BUY",
+performance:"⭐⭐⭐⭐⭐",
+camera:"⭐⭐⭐⭐",
+battery:"⭐⭐⭐⭐",
+value:"⭐⭐⭐⭐"
+}
+
+};
+
+
+function compare(){
+
+const a=
+document.getElementById("p1").value;
+
+const b=
+document.getElementById("p2").value;
+
+
+if(!a || !b){
+
+alert("Dono products select karo.");
+
+return;
+
+}
+
+
+if(a===b){
+
+alert("Do alag products select karo.");
+
+return;
+
+}
+
+
+const x=data[a];
+
+const y=data[b];
+
+
+document.getElementById("name1").innerHTML=x.name;
+
+document.getElementById("name2").innerHTML=y.name;
+
+
+document.getElementById("price1").innerHTML=x.price;
+
+document.getElementById("price2").innerHTML=y.price;
+
+
+document.getElementById("score1").innerHTML=
+x.score+"/100";
+
+document.getElementById("score2").innerHTML=
+y.score+"/100";
+
+
+document.getElementById("verdict1").innerHTML=
+badge(x.verdict);
+
+document.getElementById("verdict2").innerHTML=
+badge(y.verdict);
+
+
+document.getElementById("performance1").innerHTML=
+x.performance;
+
+document.getElementById("performance2").innerHTML=
+y.performance;
+
+
+document.getElementById("camera1").innerHTML=
+x.camera;
+
+document.getElementById("camera2").innerHTML=
+y.camera;
+
+
+document.getElementById("battery1").innerHTML=
+x.battery;
+
+document.getElementById("battery2").innerHTML=
+y.battery;
+
+
+document.getElementById("value1").innerHTML=
+x.value;
+
+document.getElementById("value2").innerHTML=
+y.value;
+
+
+document.getElementById("result").style.display=
+"block";
+
+
+document.getElementById("result")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function badge(v){
+
+if(v==="BUY")
+return '<span class="buy">🟢 BUY</span>';
+
+if(v==="WAIT")
+return '<span class="wait">🟡 WAIT</span>';
+
+return '<span class="avoid">🔴 AVOID</span>';
+
+}
+
+</script>
 
 
 </body>
+
 </html>
