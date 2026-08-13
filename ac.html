@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Air Conditioners — BuyKaroYaNahi</title>
+<style>
+:root{--bg:#f7f9fc;--card:#fff;--text:#172033;--muted:#687386;--blue:#2457e6;--border:#e7ebf2;--green:#18a66a;--yellow:#d69200;--red:#d94343}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;width:92%;margin:auto}.nav{height:72px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}.logo{font-size:23px;font-weight:900}.logo span{color:var(--blue)}.back{color:var(--blue);font-weight:800;font-size:14px}
+.hero{padding:58px 0 42px;background:linear-gradient(135deg,#eef4ff,#fff)}.eyebrow{font-size:13px;color:var(--blue);font-weight:900}.hero h1{font-size:clamp(38px,6vw,56px);line-height:1.03;letter-spacing:-2px;margin:9px 0}.hero p{color:var(--muted);max-width:700px}
+.search{display:flex;max-width:700px;margin-top:25px;background:#fff;padding:7px;border:1px solid #dce3ee;border-radius:14px}.search input{flex:1;border:0;outline:0;padding:14px;font-size:15px}.search button{border:0;background:var(--blue);color:#fff;border-radius:10px;padding:0 22px;font-weight:800}
+section{padding:44px 0}.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:25px}.filters button{padding:9px 13px;background:#fff;border:1px solid var(--border);border-radius:10px;font-weight:800;cursor:pointer}.filters .active{background:#edf2ff;color:var(--blue);border-color:#dbe4ff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:21px}.top{display:flex;justify-content:space-between;gap:10px}.card h3{margin:0 0 4px;font-size:17px}.muted{font-size:12px;color:var(--muted)}.tag{padding:6px 9px;border-radius:8px;font-size:11px;font-weight:900;white-space:nowrap}.buy{background:#e8f8f1;color:#0a8b55}.wait{background:#fff5dd;color:#a96d00}.avoid{background:#ffebeb;color:#bd3535}.price{font-size:22px;font-weight:900;margin:18px 0 12px}.score{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}.bar{height:8px;background:#edf0f5;border-radius:20px;margin-top:7px;overflow:hidden}.bar i{display:block;height:100%;border-radius:20px;background:var(--green)}.actions{display:flex;gap:8px;margin-top:17px}.actions a{flex:1;text-align:center;padding:10px;border-radius:9px;background:#edf2ff;color:var(--blue);font-size:12px;font-weight:800}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:550px){.grid{grid-template-columns:1fr}.search{flex-direction:column;gap:8px;background:transparent;border:0}.search input,.search button{height:48px}.search input{background:#fff;border:1px solid var(--border);border-radius:10px}.search button{background:var(--blue);color:#fff;border:0;border-radius:10px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="logo" href="index_v2.html">Buy<span>Karo</span>YaNahi</a><a class="back" href="index_v2.html">← Home</a></div></header>
+<div class="hero"><div class="wrap"><div class="eyebrow">❄️ AC</div><h1>Find the right AC before you buy.</h1><p>Compare tonnage, star rating, inverter technology and running cost.</p><div class="search"><input id="q" placeholder="Search 1.5 Ton, 5 Star, Daikin... "><button onclick="run()">SEARCH</button></div></div></div>
+<section><div class="wrap"><div class="filters"><button class="active" onclick="setF('all',this)">All</button><button onclick="setF('buy',this)">🟢 BUY</button><button onclick="setF('wait',this)">🟡 WAIT</button><button onclick="setF('avoid',this)">🔴 AVOID</button><button onclick="setF('budget',this)">Budget</button><button onclick="setF('premium',this)">Premium</button></div>
+<div class="grid" id="grid"><article class="card" data-v="buy" data-t="premium" data-n="daikin 1.5 ton 5 star">
+<div class="top"><div><h3>Daikin 1.5 Ton 5 Star</h3><div class="muted">Daikin • Inverter</div></div><span class="tag buy">🟢 BUY</span></div>
+<div class="price">₹46,990</div><div class="score"><span>Worth It Score</span><b>91/100</b></div><div class="bar"><i style="width:91%"></i></div>
+<div class="actions"><a href="product-detail.html?product=daikin-1-5-ton">View Check</a><a href="product-detail.html?product=daikin-1-5-ton">Compare</a></div></article><article class="card" data-v="buy" data-t="premium" data-n="lg 1.5 ton 5 star">
+<div class="top"><div><h3>LG 1.5 Ton 5 Star</h3><div class="muted">LG • Inverter</div></div><span class="tag buy">🟢 BUY</span></div>
+<div class="price">₹42,990</div><div class="score"><span>Worth It Score</span><b>87/100</b></div><div class="bar"><i style="width:87%"></i></div>
+<div class="actions"><a href="product-detail.html?product=lg-1-5-ton">View Check</a><a href="product-detail.html?product=lg-1-5-ton">Compare</a></div></article><article class="card" data-v="wait" data-t="budget" data-n="demo 1 ton ac">
+<div class="top"><div><h3>Demo 1 Ton AC</h3><div class="muted">Demo Brand • Inverter</div></div><span class="tag wait">🟡 WAIT</span></div>
+<div class="price">₹29,990</div><div class="score"><span>Worth It Score</span><b>58/100</b></div><div class="bar"><i style="width:58%"></i></div>
+<div class="actions"><a href="product-detail.html?product=demo-1-ton-ac">View Check</a><a href="product-detail.html?product=demo-1-ton-ac">Compare</a></div></article></div></div></section>
+<script>
+let f='all';
+function setF(x,b){f=x;document.querySelectorAll('.filters button').forEach(z=>z.classList.remove('active'));b.classList.add('active');run()}
+function run(){let q=document.getElementById('q').value.toLowerCase().trim();document.querySelectorAll('.card').forEach(c=>{let ok=!q||c.dataset.n.includes(q),t=true;if(['buy','wait','avoid'].includes(f))t=c.dataset.v===f;if(f==='budget')t=c.dataset.t==='budget';if(f==='premium')t=c.dataset.t==='premium';c.style.display=ok&&t?'block':'none'})}
+document.getElementById('q').addEventListener('input',run);
+</script>
+</body></html>

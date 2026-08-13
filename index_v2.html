@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuyKaroYaNahi</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f7f9fc;color:#172033}a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;width:92%;margin:auto}.nav{height:72px;background:#fff;border-bottom:1px solid #e7ebf2;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:24px;font-weight:900}.logo span{color:#2457e6}.links{display:flex;gap:24px;font-size:14px;font-weight:700;color:#566176}
+.hero{text-align:center;padding:75px 0;background:linear-gradient(135deg,#eef4ff,#fff)}h1{font-size:54px;line-height:1.05;margin:15px 0}h1 span{color:#2457e6}.hero p{color:#687386;font-size:17px}
+.search{margin:25px auto;max-width:700px;display:flex;background:#fff;padding:7px;border:1px solid #dce3ee;border-radius:15px}.search input{flex:1;border:0;outline:0;padding:14px;font-size:15px}.search button{border:0;background:#2457e6;color:#fff;border-radius:10px;padding:0 22px;font-weight:800}
+section{padding:55px 0}.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.cat{background:#fff;border:1px solid #e7ebf2;border-radius:16px;padding:22px;text-align:center;font-weight:800}.cat:hover{box-shadow:0 12px 30px #dfe5f2;transform:translateY(-2px)}.icon{font-size:30px;margin-bottom:8px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #e7ebf2;border-radius:18px;padding:22px}.card h3{margin:0 0 5px}.muted{color:#687386;font-size:13px}.price{font-size:22px;font-weight:900;margin:17px 0}.buy{color:#0a8b55;background:#e8f8f1}.wait{color:#a96d00;background:#fff5dd}.avoid{color:#bd3535;background:#ffebeb}.tag{display:inline-block;padding:6px 9px;border-radius:8px;font-size:11px;font-weight:900}.score{display:flex;justify-content:space-between;font-size:13px}.bar{height:8px;background:#edf0f5;border-radius:20px;margin-top:7px;overflow:hidden}.bar i{display:block;height:100%;background:#18a66a}
+@media(max-width:800px){.links{display:none}.cats{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:1fr 1fr}h1{font-size:42px}}
+@media(max-width:550px){.cats,.products{grid-template-columns:1fr 1fr}.search{flex-direction:column;gap:8px;background:transparent;border:0}.search input,.search button{height:48px;background:#fff;border:1px solid #e7ebf2;border-radius:10px}.search button{background:#2457e6;color:#fff;border:0}}
+</style></head>
+<body>
+<div class="nav"><div class="wrap" style="display:flex;justify-content:space-between;align-items:center"><a class="logo" href="#">Buy<span>Karo</span>YaNahi</a><div class="links"><a href="#categories">Categories</a><a href="#checks">Latest Checks</a><a href="#compare">Compare</a></div></div></div>
+<div class="hero"><div class="wrap"><div>✓ SMART BUYING DECISIONS</div><h1>Kharidne se pehle,<br><span>check kar lo.</span></h1><p>Product search karo aur dekho — BUY, WAIT ya AVOID?</p><div class="search"><input placeholder="Search a product e.g. iPhone 17, HP Laptop..."><button>CHECK NOW</button></div></div></div>
+<section id="categories"><div class="wrap"><h2>Explore Categories</h2><p class="muted">Category par click karte hi usi category ka dedicated page khulega.</p><br>
+<div class="cats">
+<a class="cat" href="mobiles.html"><div class="icon">📱</div>Mobiles</a>
+<a class="cat" href="#"><div class="icon">💻</div>Laptops</a><a class="cat" href="#"><div class="icon">📺</div>TVs</a><a class="cat" href="#"><div class="icon">❄️</div>AC</a><a class="cat" href="#"><div class="icon">🧺</div>Appliances</a><a class="cat" href="#"><div class="icon">🎧</div>Audio</a>
+</div></div></section>
+<section id="checks"><div class="wrap"><h2>Latest Checks</h2><div class="products">
+<div class="card"><span class="tag buy">🟢 BUY</span><h3>Samsung Galaxy S26</h3><div class="muted">Samsung • Smartphone</div><div class="price">₹74,999</div><div class="score"><span>Worth It Score</span><b>88/100</b></div><div class="bar"><i style="width:88%"></i></div></div>
+<div class="card"><span class="tag wait">🟡 WAIT</span><h3>HP Pavilion 15</h3><div class="muted">HP • Laptop</div><div class="price">₹59,990</div><div class="score"><span>Worth It Score</span><b>67/100</b></div><div class="bar"><i style="width:67%"></i></div></div>
+<div class="card"><span class="tag avoid">🔴 AVOID</span><h3>boAt Headphones X</h3><div class="muted">boAt • Audio</div><div class="price">₹2,999</div><div class="score"><span>Worth It Score</span><b>42/100</b></div><div class="bar"><i style="width:42%"></i></div></div>
+</div></div></section>
+</body></html>
